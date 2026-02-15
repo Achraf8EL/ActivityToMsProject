@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/activity2msproject.metamodel/src" editDirectory=""
+    modelPluginID="activity2msproject.metamodel" modelName="MMActivity" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>MMActivity.ecore</foreignModel>
+  <genPackages prefix="Mmactivity"
+    basePackage=""
+    packageInterfaceName="MmactivityPackage"
+    packageClassName="MmactivityPackageImpl"
+    disposableProviderFactory="true"
+    ecorePackage="MMActivity.ecore#/">
+  
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MMActivity.ecore#//PseudostateKind">
+      <genEnumLiterals ecoreEnumLiteral="MMActivity.ecore#//PseudostateKind/initial"/>
+      <genEnumLiterals ecoreEnumLiteral="MMActivity.ecore#//PseudostateKind/fork"/>
+      <genEnumLiterals ecoreEnumLiteral="MMActivity.ecore#//PseudostateKind/join"/>
+    </genEnums>
+    <genClasses ecoreClass="MMActivity.ecore#//StateMachine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMActivity.ecore#//StateMachine/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMActivity.ecore#//StateMachine/subvertex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMActivity.ecore#//StateMachine/transitions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="MMActivity.ecore#//StateVertex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMActivity.ecore#//StateVertex/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MMActivity.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMActivity.ecore#//Transition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMActivity.ecore#//Transition/target"/>
+    </genClasses>
+    <genClasses ecoreClass="MMActivity.ecore#//Pseudostate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMActivity.ecore#//Pseudostate/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="MMActivity.ecore#//ActionState"/>
+    <genClasses ecoreClass="MMActivity.ecore#//FinalState"/>
+  </genPackages>
+</genmodel:GenModel>

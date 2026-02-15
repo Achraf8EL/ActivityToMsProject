@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmactivity:StateMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:mmactivity="http://mmactivity/1.0"
+    name="DemoSM_ForkJoin">
+
+  <!-- ====== STATES / VERTICES ====== -->
+  <!-- 0 -->
+  <subvertex xmi:id="init" xsi:type="mmactivity:Pseudostate"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             name="Start" kind="initial"/>
+
+  <!-- 1 -->
+  <subvertex xmi:id="fork1" xsi:type="mmactivity:Pseudostate"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             name="Fork1" kind="fork"/>
+
+  <!-- 2 -->
+  <subvertex xmi:id="A" xsi:type="mmactivity:ActionState"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             name="A"/>
+
+  <!-- 3 -->
+  <subvertex xmi:id="B" xsi:type="mmactivity:ActionState"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             name="B"/>
+
+  <!-- 4 -->
+  <subvertex xmi:id="join1" xsi:type="mmactivity:Pseudostate"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             name="Join1" kind="join"/>
+
+  <!-- 5 -->
+  <subvertex xmi:id="C" xsi:type="mmactivity:ActionState"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             name="C"/>
+
+  <!-- 6 -->
+  <subvertex xmi:id="D" xsi:type="mmactivity:ActionState"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             name="D"/>
+
+  <!-- 7 -->
+  <subvertex xmi:id="final" xsi:type="mmactivity:FinalState"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             name="End"/>
+
+  <!-- ====== TRANSITIONS ====== -->
+  <!-- Start -> Fork -->
+  <transitions xmi:id="t0" source="init"  target="fork1"/>
+
+  <!-- Fork -> A and B (parallel) -->
+  <transitions xmi:id="t1" source="fork1" target="A"/>
+  <transitions xmi:id="t2" source="fork1" target="B"/>
+
+  <!-- A and B -> Join -->
+  <transitions xmi:id="t3" source="A" target="join1"/>
+  <transitions xmi:id="t4" source="B" target="join1"/>
+
+  <!-- Join -> C -->
+  <transitions xmi:id="t5" source="join1" target="C"/>
+
+  <!-- C -> D -> End -->
+  <transitions xmi:id="t6" source="C" target="D"/>
+  <transitions xmi:id="t7" source="D" target="final"/>
+
+</mmactivity:StateMachine>
