@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmactivity:StateMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mmactivity="http://mmactivity/1.0"
+    name="DemoSM_Sequential">
+
+  <!-- STATES / VERTICES -->
+  <subvertex xmi:id="init" xsi:type="mmactivity:Pseudostate"
+             name="Start" kind="initial"/>
+
+  <subvertex xmi:id="A" xsi:type="mmactivity:ActionState"
+             name="A"/>
+
+  <subvertex xmi:id="B" xsi:type="mmactivity:ActionState"
+             name="B"/>
+
+  <subvertex xmi:id="final" xsi:type="mmactivity:FinalState"
+             name="End"/>
+
+  <!-- TRANSITIONS -->
+  <transitions xmi:id="t0" source="init" target="A"/>
+  <transitions xmi:id="t1" source="A" target="B"/>
+  <transitions xmi:id="t2" source="B" target="final"/>
+
+</mmactivity:StateMachine>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mmproject:MSProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mmproject="http://mmproject/1.0" name="DemoSM_Minimal">
+  <tasks UID="1" name="Start"/>
+  <tasks UID="2" name="End" predecessors="//@tasks.0"/>
+</mmproject:MSProject>

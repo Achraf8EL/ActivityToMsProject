@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mmproject:MSProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mmproject="http://mmproject/1.0" name="DemoSM_ForkJoinSimple">
+  <tasks UID="1" name="Start"/>
+  <tasks UID="2" name="A" predecessors="//@tasks.0"/>
+  <tasks UID="3" name="B" predecessors="//@tasks.0"/>
+  <tasks UID="4" name="End" predecessors="//@tasks.2 //@tasks.1"/>
+</mmproject:MSProject>

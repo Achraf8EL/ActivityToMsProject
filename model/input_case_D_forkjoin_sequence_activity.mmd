@@ -1,0 +1,21 @@
+---
+title: DemoSM_ForkJoinSequence
+---
+flowchart LR
+    n1(["Start / initial"])
+    n2{"Fork1 / fork"}
+    n3["A"]
+    n4["B"]
+    n5{"Join1 / join"}
+    n6["C"]
+    n7["D"]
+    n8(("End"))
+
+    n1 --> n2
+    n2 --> n3
+    n2 --> n4
+    n3 --> n5
+    n4 --> n5
+    n5 --> n6
+    n6 --> n7
+    n7 --> n8

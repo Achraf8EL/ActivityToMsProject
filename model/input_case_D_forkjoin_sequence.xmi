@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmactivity:StateMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mmactivity="http://mmactivity/1.0"
+    name="DemoSM_ForkJoinSequence">
+
+  <!-- STATES / VERTICES -->
+  <subvertex xmi:id="init" xsi:type="mmactivity:Pseudostate"
+             name="Start" kind="initial"/>
+
+  <subvertex xmi:id="fork1" xsi:type="mmactivity:Pseudostate"
+             name="Fork1" kind="fork"/>
+
+  <subvertex xmi:id="A" xsi:type="mmactivity:ActionState"
+             name="A"/>
+
+  <subvertex xmi:id="B" xsi:type="mmactivity:ActionState"
+             name="B"/>
+
+  <subvertex xmi:id="join1" xsi:type="mmactivity:Pseudostate"
+             name="Join1" kind="join"/>
+
+  <subvertex xmi:id="C" xsi:type="mmactivity:ActionState"
+             name="C"/>
+
+  <subvertex xmi:id="D" xsi:type="mmactivity:ActionState"
+             name="D"/>
+
+  <subvertex xmi:id="final" xsi:type="mmactivity:FinalState"
+             name="End"/>
+
+  <!-- TRANSITIONS -->
+  <transitions xmi:id="t0" source="init" target="fork1"/>
+  <transitions xmi:id="t1" source="fork1" target="A"/>
+  <transitions xmi:id="t2" source="fork1" target="B"/>
+  <transitions xmi:id="t3" source="A" target="join1"/>
+  <transitions xmi:id="t4" source="B" target="join1"/>
+  <transitions xmi:id="t5" source="join1" target="C"/>
+  <transitions xmi:id="t6" source="C" target="D"/>
+  <transitions xmi:id="t7" source="D" target="final"/>
+
+</mmactivity:StateMachine>
